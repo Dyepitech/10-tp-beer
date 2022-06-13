@@ -1,8 +1,0 @@
-.h1mainpage {
-    display: flex;
-    justify-content: center;
-    font-family: 'Bevan', cursive;
-    font-size: 50px;
-    transform: rotate(-5deg);
-    font-style: italic;
-}
