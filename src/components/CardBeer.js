@@ -1,14 +1,18 @@
 import React from 'react';
 import './CardBeer.css'
 import axios from 'axios';
+import slugify from 'slugify'
+import { Link } from 'react-router-dom';
 
 
 class CardBeer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          beers: [{}],
-          loading: false
+          beers: [],
+          loading: false,
+          finalURL:'/beer/',
+
         };
       }
 
@@ -27,7 +31,8 @@ class CardBeer extends React.Component {
             {this.state.beers.map(beer =>
                 <div className="cardbeer" key={beer.id}>
                     <h3 className="namebeer">{beer.name}</h3>
-                    <img className="imgbeer" width="250" height="200" src={beer.image_url} alt="imgbeer" />
+                    {}
+                    <Link to={ this.state.finalURL + beer.id  + '/' + slugify(beer.name,'-')}><img className="imgbeer" width="250" height="200" src={beer.image_url} alt="imgbeer" /></Link>
                 </div>
           )}
           </div>

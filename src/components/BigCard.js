@@ -4,6 +4,21 @@ import axios from 'axios';
 
 
 class BigCard extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+        }
+    }
+
+    componentDidMount() {
+        axios.get('https://api.punkapi.com/v2/beers').then(response => {
+          this.setState({
+                beers: response.data,
+            });
+            console.log(response.data)
+        });
+    }
+
     render() {
         return (
             <div className="containerbigcard">
@@ -11,7 +26,7 @@ class BigCard extends React.Component {
                     <div className="topbigcardbeer">
                         <img className="imgbigcardbeer" src="https://via.placeholder.com/200x250" alt="imgbeer" class="imgbigcardbeer" />
                         <div className="sectiontext">
-                            <h1 className="h1secondarypage">Nom de la biere</h1>
+                            <h1 className="h1secondarypage"></h1>
                             <p className="psecondarypage">Lorem ipsum dolor sit amet consectetur 
                                 adipisicing elit. Vitae tempora expedita, voluptatibus sunt veniam minima 
                                 similique modi id sit distinctio consequatur 
