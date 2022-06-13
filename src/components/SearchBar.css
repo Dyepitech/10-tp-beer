@@ -1,0 +1,20 @@
+.containerinput{
+    display: flex;
+    justify-content: center;
+}
+
+
+.inputsearch{
+    width: 200px;
+    height: 30px;
+    font-family: 'Inter', sans-serif;
+}
+
+.buttonsearch{
+width: 110px;
+background-color: #e13e45;
+border: none;
+color: white;
+font-size: 12px;
+font-family: 'Inter', sans-serif;
+}

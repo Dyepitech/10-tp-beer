@@ -1,0 +1,48 @@
+.topbigcardbeer{
+    display: flex;
+}
+
+.imgbigcardbeer{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.sectiontext{
+    margin-left: 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+.psecondarypage{
+    font-family: 'Inter', sans-serif;
+}
+
+.botbigcardbeer{
+    display: flex;
+    margin-top: 20px;
+}
+
+.leftbigcardbeer{
+width: 70%;
+margin-left: 15px;
+}
+
+.rond{
+    background-color: #ffc425;
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    border-radius: 50px;
+}
+
+.rondgray{
+    background-color: gray;
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    border-radius: 50px;
+}
+
+.containerrond{
+    display: flex;
+    margin-bottom: 5px;
+}
