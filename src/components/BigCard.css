@@ -1,3 +1,11 @@
+.bigcarbeer{
+    display: flex;
+    background-color: white;
+    border-top: 15px solid #e13e45  ;
+    flex-direction: column;
+    width: 800px;
+}
+
 .topbigcardbeer{
     display: flex;
 }
