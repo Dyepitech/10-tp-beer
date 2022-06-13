@@ -32,7 +32,7 @@ class CardBeer extends React.Component {
                 <div className="cardbeer" key={beer.id}>
                     <h3 className="namebeer">{beer.name}</h3>
                     {}
-                    <Link to={ this.state.finalURL + beer.id  + '/' + slugify(beer.name,'-')}><img className="imgbeer" width="250" height="200" src={beer.image_url} alt="imgbeer" /></Link>
+                    <img className="imgbeer" width="250" height="200" src={beer.image_url} alt="imgbeer" />
                 </div>
           )}
           </div>
