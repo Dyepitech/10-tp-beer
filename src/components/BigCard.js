@@ -73,8 +73,18 @@ class BigCard extends React.Component {
                                 </div>
                             </div>
                             <div class="rightbigcardbeer">
-                                <img src="https://via.placeholder.com/200x250" alt="imgbeer" /><br />
-                                <strong> {'EBC: ' + product.ebc + '  (GLASS) '}</strong>
+                                {product.ebc > 0 && product.ebc <= 10 ? <div> <img src="/img/glass-1.jpg" alt="imgbeer" /><br />  <strong> {'EBC: ' + product.ebc + '  (GLASS 1) '}</strong> </div> : null   }
+                                {product.ebc > 10 && product.ebc <= 20 ? <div> <img src="/img/glass-2.jpg" alt="imgbeer" /><br />  <strong> {'EBC: ' + product.ebc + '  (GLASS 2) '}</strong> </div> : null   }
+                                {product.ebc > 20 && product.ebc <= 30 ? <div> <img src="/img/glass-3.jpg" alt="imgbeer" /><br />  <strong> {'EBC: ' + product.ebc + '  (GLASS 3) '}</strong> </div> : null   }
+                                {product.ebc > 30 && product.ebc <= 40 ? <div> <img src="/img/glass-4.jpg" alt="imgbeer" /><br />  <strong> {'EBC: ' + product.ebc + '  (GLASS 4) '}</strong> </div> : null   }
+                                {product.ebc > 40 && product.ebc <= 50 ? <div> <img src="/img/glass-5.jpg" alt="imgbeer" /><br />  <strong> {'EBC: ' + product.ebc + '  (GLASS 5) '}</strong> </div> : null   }
+                                {product.ebc > 50 && product.ebc <= 60 ? <div> <img src="/img/glass-6.jpg" alt="imgbeer" /><br />  <strong> {'EBC: ' + product.ebc + '  (GLASS 6) '}</strong> </div> : null   }
+                                {product.ebc > 60 && product.ebc <= 70 ? <div> <img src="/img/glass-7.jpg" alt="imgbeer" /><br />  <strong> {'EBC: ' + product.ebc + '  (GLASS 7) '}</strong> </div> : null   }
+                                {product.ebc > 70 && product.ebc <= 80 ? <div> <img src="/img/glass-8.jpg" alt="imgbeer" /><br />  <strong> {'EBC: ' + product.ebc + '  (GLASS 8) '}</strong> </div> : null   }
+                                {product.ebc > 80 && product.ebc <= 90 ? <div> <img src="/img/glass-9.jpg" alt="imgbeer" /><br />  <strong> {'EBC: ' + product.ebc + '  (GLASS 9) '}</strong> </div> : null   }
+                                {product.ebc > 90 && product.ebc <= 100 ? <div> <img src="/img/glass-10.jpg" alt="imgbeer" /><br />  <strong> {'EBC: ' + product.ebc + '  (GLASS 10) '}</strong> </div> : null   }
+                                {product.ebc > 100 && product.ebc <= 110 ? <div> <img src="/img/glass-11.jpg" alt="imgbeer" /><br />  <strong> {'EBC: ' + product.ebc + '  (GLASS 11) '}</strong> </div> : null   }
+                                {product.ebc > 110 && product.ebc <= 120 ? <div> <img src="/img/glass-12.jpg" alt="imgbeer" /><br />  <strong> {'EBC: ' + product.ebc + '  (GLASS 1) '}</strong> </div> : null   }
                             </div>
                         </div>
                     </div>
