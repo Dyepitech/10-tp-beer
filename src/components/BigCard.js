@@ -8,7 +8,13 @@ class BigCard extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            products: []
+            products: [],
+            status:'',
+            value:'rondgray',
+            value1:'rondgray',
+            value2:'rondgray',
+            value3:'rondgray',
+            value4:'rondgray',
         }
     }
 
@@ -23,50 +29,60 @@ class BigCard extends React.Component {
                   products: response.data
                 })
             console.log(response.data);
+            console.log(this.state.products.ibu)
           })
+    
     }
 
+   
+
+
     render() {
+    if(this.state.status >= 0){
+      this.setState({value :'rond'})
+    }if(this.state.status >= 20){
+        this.setState({value1 :'rond'})
+    }if(this.state.status >= 40 ){
+        this.setState({value2 :'rond'})
+    }if(this.state.status >= 60){
+        this.setState({value3 :'rond'})
+    }else {
+        this.setState({value4 :'rond'})
+    }
         return (
             <div className="containerbigcard">
+                        {this.state.products.map(product =>
                 <div className="bigcarbeer">
                     <div className="topbigcardbeer">
-                        <img className="imgbigcardbeer" src="https://via.placeholder.com/200x250" alt="imgbeer" class="imgbigcardbeer" />
-                        {this.state.products.map(product =>
+                        <img className="imgbigcardbeer" src={product.image_url} alt="imgbeer" class="imgbigcardbeer" />
                         <div className="sectiontext" key={product.id}>
                             <h1 className="h1secondarypage">{product.name}</h1>
-                            <p className="psecondarypage">Lorem ipsum dolor sit amet consectetur 
-                                adipisicing elit. Vitae tempora expedita, voluptatibus sunt veniam minima 
-                                similique modi id sit distinctio consequatur 
-                                accusantium esse, aliquid cupiditate excepturi adipisci cum quos dolorum.
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam vero non aliquam et aut sit quisquam perspiciatis, tempora corporis sequi esse iste, eius consequatur, quam id nobis minima. Quam, autem?
-                            </p>
+                            <p className="psecondarypage">{product.description}</p>
                         </div>
-                    )}
                 </div>
                 <div className="botbigcardbeer">
                     <div className="leftbigcardbeer">
                          <div className="alc">
                              <span>Alc.</span>
-                             <span>X.x %</span>
+                             <span>{product.abv} %</span>
                          </div>
                          <div>
                              <h2>Food Pairing</h2>
+                            {product.food_pairing.map(pairing => 
                              <ul>
-                                 <li>test1</li>
-                                 <li>test2</li>
-                                 <li>test3</li>
-                                 <li>test4</li>
+                                 <li>{pairing}</li>
+                       
                              </ul>
+                                )}
                          </div>
                          <div>
-                             <h2>Ibu xxxx</h2>
+                             <h2>Ibu{this.state.status = product.ibu}</h2>
                             <div className="containerrond">
-                                <div className="rond"></div>
-                                <div className="rond"></div>
-                                <div className="rond"></div>
-                                <div className="rondgray"></div>
-                                <div className="rondgray"></div>
+                                <div className={this.state.value}></div>
+                                <div className={this.state.value1}></div>
+                                <div className={this.state.value2}></div>
+                                <div className={this.state.value3}></div>
+                                <div className={this.state.value4}></div>
                             </div>
                          </div>
                     </div>
@@ -75,6 +91,7 @@ class BigCard extends React.Component {
                     </div>
                 </div>
             </div>
+        )}
         </div>
         );
     }
