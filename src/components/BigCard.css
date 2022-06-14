@@ -4,6 +4,7 @@
     border-top: 15px solid #e13e45  ;
     flex-direction: column;
     width: 800px;
+    height: 550px;
 }
 
 .topbigcardbeer{
@@ -15,9 +16,27 @@
     margin-left: 20px;
 }
 
+img{
+    width: 250px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.imgGlass{
+    width: 143px;
+    height: 200px;
+    object-fit: contain;
+}
+
 .sectiontext{
     margin-left: 20px;
     font-family: 'Inter', sans-serif;
+
+}
+
+.libigcard{
+    font-family: 'Inter', sans-serif;
+    margin: 0;
 }
 
 .psecondarypage{
@@ -29,9 +48,24 @@
     margin-top: 20px;
 }
 
+.h2bigcard{
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+}
+
+.spanbold{
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+}
+
 .leftbigcardbeer{
 width: 70%;
 margin-left: 15px;
+}
+
+.strongbold{
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
 }
 
 .rond{

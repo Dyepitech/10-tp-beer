@@ -22,7 +22,6 @@ class CardBeer extends React.Component {
           this.setState({
                 beers: response.data,
             });
-            console.log(response.data)
         });
     }
 
@@ -30,14 +29,11 @@ class CardBeer extends React.Component {
       let actual;
       let prev;
       actual = this.props.router.params.search;
-      // console.log(this.props.router.params.search != prevProps.locations)
-      console.log(this.props.router.params.search)
       if (this.props.router.params.search != prevProps.locations){
             axios.get('https://api.punkapi.com/v2/beers' + '?beer_name=' + this.props.router.params.search).then(response => {
                 this.setState({
                     beers: response.data,
                 });
-                console.log('https://api.punkapi.com/v2/beers' + '?beer_name=' + this.props.router.params.search)
             });
         }
     }
@@ -48,7 +44,7 @@ class CardBeer extends React.Component {
             {this.state.beers.map(beer =>
                 <div className="cardbeer" key={beer.id}>
                     <h3 className="namebeer">{beer.name}</h3>
-                    <Link to={ this.state.finalURL + beer.id  + '/' + slugify(beer.name,'-')}><img className="imgbeer" width="250" height="200" src={beer.image_url} alt="imgbeer" /></Link>
+                    <Link to={ this.state.finalURL + beer.id  + '/' + slugify(beer.name,'-')}> {beer.image_url ? <img className="imgbeer" width="250" height="200" src={beer.image_url} alt="imgbeer" />: <img className="imgbeer" width="250" height="200" src="https://via.placeholder.com/200x250" alt="imgbeer" />}</Link>
                 </div>
           )}
           </div>

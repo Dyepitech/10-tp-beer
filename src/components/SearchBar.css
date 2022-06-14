@@ -18,3 +18,24 @@ color: white;
 font-size: 12px;
 font-family: 'Inter', sans-serif;
 }
+
+.link{
+    width: 110px;
+    background-color: #e13e45;
+    border: none;
+    color: white;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    text-decoration: none;
+}
+
+.buttonsearch:hover{
+    width: 110px;
+    background-color: #8e151b;
+    border: none;
+    color: white;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    }
+

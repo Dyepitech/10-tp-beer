@@ -15,15 +15,6 @@ class Home extends React.Component {
         };
       }
 
-    componentDidMount() {
-        axios.get('https://api.punkapi.com/v2/beers').then(response => {
-          this.setState({
-                beers: response.data,
-            });
-            console.log(response.data)
-        });
-    }
-
     render() {
         return(
             <div className="test">
