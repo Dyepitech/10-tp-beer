@@ -37,7 +37,7 @@ class BigCard extends React.Component {
     render() {
         return (
             <div className="containerbigcard">
-                {this.state.products.map(product =>
+                {this.state.products.map((product, index) =>
                     <div className="bigcarbeer">
                         <div className="topbigcardbeer">
                             <img className="imgbigcardbeer" src={product.image_url} alt="imgbeer" class="imgbigcardbeer" />
@@ -50,11 +50,11 @@ class BigCard extends React.Component {
                             <div className="leftbigcardbeer">
                                 <div className="alc">
                                     <span>Alc.</span>
-                                    <span>{product.abv} %</span>
+                                    <span>{' ' + product.abv} %</span>
                                 </div>
                                 <div>
                                     <h2>Food Pairing</h2>
-                                    {product.food_pairing.map(pairing =>
+                                    {product.food_pairing.map((pairing, index) =>
                                         <ul>
                                             <li>{pairing}</li>
 
@@ -73,7 +73,8 @@ class BigCard extends React.Component {
                                 </div>
                             </div>
                             <div class="rightbigcardbeer">
-                                <img src="https://via.placeholder.com/200x250" alt="imgbeer" />
+                                <img src="https://via.placeholder.com/200x250" alt="imgbeer" /><br />
+                                <strong> {'EBC: ' + product.ebc + '  (GLASS) '}</strong>
                             </div>
                         </div>
                     </div>
