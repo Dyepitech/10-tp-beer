@@ -1,5 +1,6 @@
 import React from 'react';
 import './BigCard.css'
+import { withRouter } from '../index';
 import axios from 'axios';
 
 
@@ -7,16 +8,22 @@ class BigCard extends React.Component {
     constructor(props){
         super(props);
         this.state = {
+            products: []
         }
     }
 
     componentDidMount() {
-        axios.get('https://api.punkapi.com/v2/beers').then(response => {
-          this.setState({
-                beers: response.data,
-            });
-            console.log(response.data)
-        });
+        axios.get('https://api.punkapi.com/v2/beers/' + this.props.router.params.id, {
+            params: {
+              id: this.props.router.params.id
+            }
+          })
+          .then(response => {
+              this.setState({
+                  products: response.data
+                })
+            console.log(response.data);
+          })
     }
 
     render() {
@@ -25,8 +32,9 @@ class BigCard extends React.Component {
                 <div className="bigcarbeer">
                     <div className="topbigcardbeer">
                         <img className="imgbigcardbeer" src="https://via.placeholder.com/200x250" alt="imgbeer" class="imgbigcardbeer" />
-                        <div className="sectiontext">
-                            <h1 className="h1secondarypage"></h1>
+                        {this.state.products.map(product =>
+                        <div className="sectiontext" key={product.id}>
+                            <h1 className="h1secondarypage">{product.name}</h1>
                             <p className="psecondarypage">Lorem ipsum dolor sit amet consectetur 
                                 adipisicing elit. Vitae tempora expedita, voluptatibus sunt veniam minima 
                                 similique modi id sit distinctio consequatur 
@@ -34,7 +42,7 @@ class BigCard extends React.Component {
                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam vero non aliquam et aut sit quisquam perspiciatis, tempora corporis sequi esse iste, eius consequatur, quam id nobis minima. Quam, autem?
                             </p>
                         </div>
-                    
+                    )}
                 </div>
                 <div className="botbigcardbeer">
                     <div className="leftbigcardbeer">
@@ -72,4 +80,4 @@ class BigCard extends React.Component {
     }
   }
 
-export default BigCard;
+export default withRouter(BigCard);

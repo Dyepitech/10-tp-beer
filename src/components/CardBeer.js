@@ -31,8 +31,7 @@ class CardBeer extends React.Component {
             {this.state.beers.map(beer =>
                 <div className="cardbeer" key={beer.id}>
                     <h3 className="namebeer">{beer.name}</h3>
-                    {}
-                    <img className="imgbeer" width="250" height="200" src={beer.image_url} alt="imgbeer" />
+                    <Link to={ this.state.finalURL + beer.id  + '/' + slugify(beer.name,'-')}><img className="imgbeer" width="250" height="200" src={beer.image_url} alt="imgbeer" /></Link>
                 </div>
           )}
           </div>
