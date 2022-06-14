@@ -1,6 +1,8 @@
 import React from 'react';
 import './ListBeer.css'
 import CardBeer from './CardBeer.js'
+// import Sitename from './Sitename.js'
+// import Sitename from './Sitename.js'
 
 
 class Listbeer extends React.Component {

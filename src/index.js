@@ -14,7 +14,7 @@ root.render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/beer/:id/:name" element={<BigCard />} />
-        <Route path="/recherche/:search" element={<ListBeer  />} />
+        <Route path="/recherche/:search" element={<Home  />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -32,12 +32,14 @@ class CardBeer extends React.Component {
       actual = this.props.router.params.search;
       // console.log(this.props.router.params.search != prevProps.locations)
       console.log(this.props.router.params.search)
-      axios.get('https://api.punkapi.com/v2/beers').then(response => {
-        this.setState({
-              beers: response.data,
-          });
-          console.log(response.data)
-      });
+      if (this.props.router.params.search != prevProps.locations){
+            axios.get('https://api.punkapi.com/v2/beers' + '?beer_name=' + this.props.router.params.search).then(response => {
+                this.setState({
+                    beers: response.data,
+                });
+                console.log('https://api.punkapi.com/v2/beers' + '?beer_name=' + this.props.router.params.search)
+            });
+        }
     }
 
     render() {
