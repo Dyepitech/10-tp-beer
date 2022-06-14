@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route, useParams, useNavigate } from 'react-rout
 import App from './App';
 import Home from './Home';
 import BigCard from './components/BigCard';
+import SearchBar from './components/SearchBar';
+import ListBeer from './components/ListBeer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,6 +14,7 @@ root.render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/beer/:id/:name" element={<BigCard />} />
+        <Route path="/recherche/:search" element={<ListBeer  />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

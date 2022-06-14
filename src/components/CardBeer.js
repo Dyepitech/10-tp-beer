@@ -3,6 +3,7 @@ import './CardBeer.css'
 import axios from 'axios';
 import slugify from 'slugify'
 import { Link } from 'react-router-dom';
+import { withRouter } from '../index';
 
 
 class CardBeer extends React.Component {
@@ -25,6 +26,20 @@ class CardBeer extends React.Component {
         });
     }
 
+    componentDidUpdate(prevProps){
+      let actual;
+      let prev;
+      actual = this.props.router.params.search;
+      // console.log(this.props.router.params.search != prevProps.locations)
+      console.log(this.props.router.params.search)
+      axios.get('https://api.punkapi.com/v2/beers').then(response => {
+        this.setState({
+              beers: response.data,
+          });
+          console.log(response.data)
+      });
+    }
+
     render() {
         return (
             <div className="top-container"> 
@@ -39,4 +54,5 @@ class CardBeer extends React.Component {
     }
   }
 
-export default CardBeer;
+export default  withRouter(CardBeer);
+
