@@ -18,11 +18,21 @@ class CardBeer extends React.Component {
       }
 
     componentDidMount() {
-        axios.get('https://api.punkapi.com/v2/beers').then(response => {
-          this.setState({
-                beers: response.data,
+        let data;
+        let beer;
+        if(!localStorage.getItem('beer')){
+            axios.get('https://api.punkapi.com/v2/beers').then(response => {
+                this.setState({
+                    beers: response.data,
+                });
+                localStorage.setItem('beer', JSON.stringify(response.data));
             });
-        });
+        }
+        else {
+            this.setState({
+                beers: JSON.parse(localStorage.getItem('beer')),
+            });
+        }
     }
 
     componentDidUpdate(prevProps){
