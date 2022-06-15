@@ -1,0 +1,12 @@
+html, .container {
+    height: 100%;
+}
+body, .container {
+    min-height: 100%;
+}
+
+.content-cart {
+    width: 1000px;
+    height: auto;
+    background-color: aliceblue;
+}

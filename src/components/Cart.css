@@ -1,0 +1,8 @@
+.cart-pos {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cart-pos > p {
+    margin-left: 10px;
+}

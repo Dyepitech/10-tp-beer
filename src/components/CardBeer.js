@@ -13,13 +13,10 @@ class CardBeer extends React.Component {
           beers: [],
           loading: false,
           finalURL:'/beer/',
-
         };
       }
 
     componentDidMount() {
-        let data;
-        let beer;
         if(!localStorage.getItem('beer')){
             axios.get('https://api.punkapi.com/v2/beers').then(response => {
                 this.setState({
@@ -37,9 +34,8 @@ class CardBeer extends React.Component {
 
     componentDidUpdate(prevProps){
       let actual;
-      let prev;
       actual = this.props.router.params.search;
-      if (this.props.router.params.search != prevProps.locations){
+      if (this.props.router.params.search !== prevProps.locations){
             axios.get('https://api.punkapi.com/v2/beers' + '?beer_name=' + this.props.router.params.search).then(response => {
                 this.setState({
                     beers: response.data,

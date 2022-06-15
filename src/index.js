@@ -6,6 +6,7 @@ import Home from './Home';
 import BigCard from './components/BigCard';
 import SearchBar from './components/SearchBar';
 import ListBeer from './components/ListBeer';
+import CartPage from './components/CartPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,6 +16,7 @@ root.render(
         <Route path="/" element={<Home />} />
         <Route path="/beer/:id/:name" element={<BigCard />} />
         <Route path="/recherche/:search" element={<Home  />} />
+        <Route path="/cart/" element={<CartPage  />}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
