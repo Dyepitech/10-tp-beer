@@ -10,7 +10,7 @@ class BigCard extends React.Component {
         this.state = {
             products: [],
             status: '',
-            cart: { id: "", name: "", desc: "", quantity: 1 }
+            cart: { id: "", name: "", desc: "", quantity: 1, prix: null }
         }
     }
 
@@ -44,11 +44,14 @@ class BigCard extends React.Component {
         alert("tu as ajouté au panier" + this.product.name)
     }
 
-    clickMe = (event, name, desc, quantity) => {
+    clickMe = (event, name, desc, quantity, image, prix) => {
         axios.post(`http://localhost:3030/cart`, {
             name: name,
             desc: desc,
-            quantity: quantity
+            quantity: quantity,
+            image: image,
+            prix: prix,
+
         })
             .then(res => {
                 console.log(res);
@@ -63,7 +66,7 @@ class BigCard extends React.Component {
                 {this.state.products.map((product, index) =>
                     <div className="bigcarbeer">
                         <div className="topbigcardbeer">
-                            {product.image_url ? <img className="imgbigcardbeer" src={product.image_url} alt="imgbeer" className="imgbigcardbeer" /> : <img className="imgbigcardbeer" src="https://via.placeholder.com/200x250" alt="imgbeer" className="imgbigcardbeer" />}
+                            {product.image_url ? <img className="imgbigcardbeer" src={product.image_url} alt="imgbeer" /> : <img className="imgbigcardbeer" src="https://via.placeholder.com/200x250" alt="imgbeer"/>}
 
                             <div className="sectiontext" key={product.id}>
                                 <h1 className="h1secondarypage">{product.name}</h1>
@@ -115,7 +118,7 @@ class BigCard extends React.Component {
                         </div>
                         <div className="d-flex justify-content-center">
                             <button className="btn btn-danger" onClick={(e) => {
-                                this.clickMe(e, product.name, product.description, 1);
+                                this.clickMe(e, product.name, product.description, 1, product.image_url, product.abv );
                             }}>Ajouter {product.name} au panier</button>
                         </div>
                     </div>
